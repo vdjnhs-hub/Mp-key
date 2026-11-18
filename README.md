@@ -1,3 +1,5 @@
+![MP Key Cover](mp-key-cover.png)
+
 # MP Key – FL Studio VST3 (Windows)
 
 MP Key এখানে একটা ইফেক্ট প্লাগিন। FL Studio-র মিক্সারের যেকোনো স্লটে বসালে এর দুই ডেকের গান মিক্সারের ওই ট্র্যাকে বাজে।
