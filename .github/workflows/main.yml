@@ -15,8 +15,11 @@ jobs:
       - name: Download Source Code
         uses: actions/checkout@v4
 
+      - name: Install WebView2 SDK
+        run: nuget install Microsoft.Web.WebView2 -Version 1.0.1901.177 -OutputDirectory packages
+
       - name: Configure CMake
-        run: cmake -S . -B build -A x64
+        run: cmake -S . -B build -A x64 -DJUCE_WEBVIEW2_PACKAGE_LOCATION="${{ github.workspace }}/packages"
 
       - name: Build VST3 Plugin
         run: cmake --build build --config Release --target MPKey_VST3
