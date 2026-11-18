@@ -1,3 +1,4 @@
+
 name: Build MP Key
 
 on:
@@ -19,3 +20,11 @@ jobs:
 
       - name: Build VST3 Plugin
         run: cmake --build build --config Release --target MPKey_VST3
+
+      - name: Upload VST3 Plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: MP-Key-VST3
+          path: build/MPKey_artefacts/Release/VST3/*.vst3
+          if-no-files-found: error
+          
