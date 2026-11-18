@@ -1,0 +1,21 @@
+name: Build MP Key
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Download Source Code
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -S . -B build -A x64
+
+      - name: Build VST3 Plugin
+        run: cmake --build build --config Release --target MPKey_VST3
