@@ -2,6 +2,54 @@
 
 # MP Key – FL Studio VST3 (Windows)
 
+MP Key is a VST3 audio plugin designed for music producers. It provides song key detection, BPM detection, tempo control, and volume control.
+
+## Easy Installation Guide
+
+1. Open the GitHub repository.
+2. Download the latest MP Key VST3 ZIP file from the **Releases** section.
+3. Extract the downloaded ZIP file.
+4. Copy the entire `MP Key.vst3` folder to:
+
+   `C:\Program Files\Common Files\VST3`
+
+5. Open FL Studio.
+6. Go to **Options → Manage Plugins**.
+7. Click **Find Plugins** to scan for MP Key.
+
+## Build from Source
+
+To build MP Key yourself, you will need:
+
+- Visual Studio 2022 (C++ workload)
+- CMake
+
+Run these commands:
+
+```bash
+cmake -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release --target MPKey_VST3
+```
+
+## How to Use
+
+- Load an audio file into FL Studio.
+- Open MP Key from the plugin list.
+- Use the available controls to adjust tempo and volume.
+- Check the displayed BPM and key information.
+
+## Project Structure
+
+- `Source/ui/index.html` – Plugin user interface.
+- `Source/PluginProcessor.*` – Audio processing and plugin functionality.
+- `Source/PluginEditor.*` – Plugin editor and WebView2 integration.
+
+## Important Notice
+
+MP Key is currently in **Beta**. It has not yet been fully tested in a Windows FL Studio environment. Some features may not work as expected. Feedback and bug reports are welcome.
+
+# MP Key – FL Studio VST3 (Windows)
+
 MP Key এখানে একটা ইফেক্ট প্লাগিন। FL Studio-র মিক্সারের যেকোনো স্লটে বসালে এর দুই ডেকের গান মিক্সারের ওই ট্র্যাকে বাজে।
 ইন্টারফেস, BPM/কী ডিটেকশন, VU মিটার আর টেম্পো/পিচ নব আগের অ্যাপের মতোই।
 
